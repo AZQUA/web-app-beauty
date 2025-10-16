@@ -1,17 +1,19 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-const Button = () => {
-    const [isOpen, setIsOpen] = useState(false);
+
+type DropdownMenuProps = {
+    isOpen: boolean;
+    toggleMenu: () => void;
+};
+
+const Button = ({isOpen, toggleMenu}: DropdownMenuProps) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
+                toggleMenu;
             }
         };
 
@@ -28,14 +30,15 @@ const Button = () => {
                 <img
                     src="https://images.icon-icons.com/2036/PNG/512/menu_circular_button_burger_icon_124214.png"
                     alt="Menu"
+                    className="xl:size-30 xl:ml-10 xl:mt-5 xl:mb-5 size-15 ml-5 mt-2.5"
                 />
             </button>
             {isOpen && (
-                <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <ul className="text-2xl text-gray-900 font-bold font-mono py-1">
-                        <li onClick={() => setIsOpen(false)} className="hover:bg-purple-600 hover:bg-clip-text hover:text-transparent ">Le Jeu</li>
-                        <li onClick={() => setIsOpen(false)} className="hover:bg-purple-600 hover:bg-clip-text hover:text-transparent ">Les Cartes</li>
-                        <li onClick={() => setIsOpen(false)} className="hover:bg-purple-600 hover:bg-clip-text hover:text-transparent ">Le Discord</li>
+                <div className="fixed left-0 z-10 xl:w-55 h-screen origin-top-right bg-white/5 shadow-lg focus:outline-none w-26">
+                    <ul className="xl:text-3xl text-gray-900 font-bold font-mono xl:pl-5 xl:py-5 pl-1 py-2 text-base">
+                        <li onClick={toggleMenu} className="hover:bg-purple-300 hover:bg-clip-text hover:text-transparent pb-2 ">Le Jeu</li>
+                        <li onClick={toggleMenu} className="hover:bg-purple-300 hover:bg-clip-text hover:text-transparent pb-2">Les Cartes</li>
+                        <li onClick={toggleMenu} className="hover:bg-purple-300 hover:bg-clip-text hover:text-transparent pb-2">Le Discord</li>
                     </ul>
                 </div>
             )}

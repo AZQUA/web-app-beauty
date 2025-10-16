@@ -1,5 +1,5 @@
 const Header = ({ children } : any) => {
-    return <div className = "">{children}</div>;
+    return <div className = "bg-white/5">{children}</div>;
 };
 
 export default Header
