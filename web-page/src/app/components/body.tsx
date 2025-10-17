@@ -7,7 +7,7 @@ type BodyProps = {
 
 
 const Body =({children, isOpen}: BodyProps ) => {
-    const Class = isOpen ? "ml-26 xl:ml-55 ": "";
+    const Class = isOpen ? "ml-26 xl:ml-55": "ml-15 xl:ml-20";
     return (
         <div className = {`transition-all duration-300 esase-in-out ${Class}`}>{children}</div>
     )

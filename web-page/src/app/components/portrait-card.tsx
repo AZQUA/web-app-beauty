@@ -7,7 +7,7 @@ type PortraitCardProps = {
 }
 const PortraitCard = ({ imageUrl , text, description}: PortraitCardProps ) => {
     return (
-    <div className="flex pt-10">
+    <div className="pt-10">
         <div className="xl:w-70 w-55 xl:bg-white bg-transparent xl:rounded-lg xl:shadow-lg overflow-hidden shadow-none">
             {/* Moitié haute : Image */}
             <div className="xl:h-70 xl:w-full w-35 xl:ml-0 ml-10 h-35">
