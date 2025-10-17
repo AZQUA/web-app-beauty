@@ -20,7 +20,10 @@ const App = () => {
   return (
     <div>
       <Header>
-        <Button isOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
+        <div>
+          <Button isOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
+          
+        </div>
       </Header>
       <Body isOpen={isMenuOpen}>
         <div className='flex content-center justify-evenly'>

@@ -22,7 +22,7 @@ const PortraitCard = ({ imageUrl , text, description}: PortraitCardProps ) => {
 
             {/* Moitié basse : Texte */}
             <div className="xl:h-70 w-full flex items-center justify-center p-3 bg-white h-35 shadow-lg xl:rounded-none rounded-lg">
-                <p className="text-center text-xs text-gray-700">{text || "Votre texte ici"}</p>
+                <p className="text-center xl:text-lg text-xs text-gray-700">{text || "Votre texte ici"}</p>
             </div>
         </div>
     </div>
