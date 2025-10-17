@@ -1,4 +1,12 @@
-const PortraitCardReverse = ({ imageUrl , text, description}: any ) => {
+import Image, { StaticImageData } from 'next/image';
+
+type PortraitCardProps = {
+    imageUrl: StaticImageData;
+    description: string;
+    text: string;
+}
+
+const PortraitCardReverse = ({ imageUrl , text, description}: PortraitCardProps ) => {
     return (
     <div className="flex pt-10">
         <div className="xl:w-70 w-55 xl:bg-white bg-transparent xl:rounded-lg xl:shadow-lg overflow-hidden shadow-none">
@@ -8,8 +16,8 @@ const PortraitCardReverse = ({ imageUrl , text, description}: any ) => {
             </div>
             {/* Moitié basse : Image */}
             <div className="xl:h-70 xl:w-full w-35 xl:ml-0 ml-10 h-35">
-                <img
-                    src={imageUrl || "/placeholder.svg?height=320&width=256&query=portrait image"}
+                <Image
+                    src={imageUrl}
                     alt={description}
                     className="w-full h-full object-cover rounded-b-lg"
                 />
