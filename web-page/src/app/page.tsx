@@ -29,7 +29,7 @@ const App = () => {
         <div className='flex content-center justify-evenly'>
           <PortraitCard 
             imageUrl = {AlienImage}
-            text ="L'Alien Infiltré est le pire ennemi des membres de la station. Il profitera de la moindre occasion durant la nuit pour dévorer les spationnautes paisiblements endormies. Mais faites attention, une petite espionne traine parfois dans les parages, et fera tout pour vous démasquer."
+            text ="L'Alien Infiltré est le pire ennemi des membres de la station. Il profitera de la moindre occasion nocturne pour dévorer les spationnautes endormies."
             description = "Alien Infiltré"
           />
           <PortraitCardReverse
