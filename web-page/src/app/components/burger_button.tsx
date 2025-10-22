@@ -25,7 +25,7 @@ const Button = ({isOpen, toggleMenu}: DropdownMenuProps) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isOpen, toggleMenu]);
-
+    const Class = isOpen ? "bg-white/5" : "bg-white/25"
     return (
         <div className="relative inline-block text-left">
             <Transition
@@ -39,7 +39,7 @@ const Button = ({isOpen, toggleMenu}: DropdownMenuProps) => {
                 leaveFrom="translate-x-0 opacity-100"
                 leaveTo="-translate-x-full opacity-0"
             >
-                <div  ref={dropdownRef} className="fixed left-0 top-0 z-10 xl:w-55 h-screen origin-top-right bg-white/20 shadow-lg focus:outline-none w-26 ">
+                <div  ref={dropdownRef} className="fixed left-0 top-0 z-10 xl:w-55 h-screen origin-top-right bg-white/15 shadow-lg focus:outline-none w-26 ">
                     <ul onClick={toggleMenu} className="xl:text-3xl text-gray-300 font-bold font-mono xl:pl-5 xl:pt-28 pl-1 pt-20 text-base">
                         <li onClick={toggleMenu} className="hover:bg-purple-700 hover:bg-clip-text hover:text-transparent xl:pb-2 xl:pt-2 pb-1 pt-1 "><a href="https://project42.fr" target="_blank">Le Jeu</a></li>
                         <li onClick={toggleMenu} className="hover:bg-purple-700 hover:bg-clip-text hover:text-transparent xl:pb-2 xl:pt-2 pb-1 pt-1"><a href="https://project42.fr/cards" target="_blank">Les Cartes</a></li>
@@ -48,11 +48,12 @@ const Button = ({isOpen, toggleMenu}: DropdownMenuProps) => {
                 </div>
             </Transition>
             <button className="fixed"onClick={toggleMenu} ref={buttonRef}>
-                <img
-                    src="https://images.icon-icons.com/2036/PNG/512/menu_circular_button_burger_icon_124214.png"
-                    alt="Menu"
-                    className="xl:size-20 xl:ml-5 xl:mt-0 xl:mb-5 size-15 ml-5 bg-white/30 rounded-full"
-                />
+                
+                    <img
+                        src="https://images.icon-icons.com/2036/PNG/512/menu_circular_button_burger_icon_124214.png"
+                        alt="Menu"
+                        className = {`xl:size-20 xl:ml-5 xl:mt-0 xl:mb-5 size-15 ml-5 rounded-full ${Class}`}
+                    />
             </button>
             
         </div>
